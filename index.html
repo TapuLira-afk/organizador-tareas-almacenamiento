@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizador de tareas</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="./script.js" defer></script>
+
+  <!-- Biblioteca SortableJS -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+</head>
+
+<body>
+  <main class="contenedor">
+    <header class="cabecera">
+      <div>
+        <h1>Organizador de tareas</h1>
+        <p>Arrastra las tareas para ordenarlas o cambiar su estado.</p>
+      </div>
+    </header>
+
+    <section class="resumen">
+      <p>Progreso: <strong id="porcentaje">14%</strong></p>
+      <div class="barra-fondo">
+        <div id="barra-progreso" class="barra-progreso" style="width: 14%;"></div>
+      </div>
+    </section>
+
+    <section class="tablero">
+      <!-- Columna de tareas pendientes -->
+      <article class="columna">
+        <h2>Pendientes
+          <span id="contador-pendientes" class="contador">4</span>
+        </h2>
+        <ul id="pendientes" class="lista-tareas" data-estado="Pendientes">
+          <li class="tarea" data-id="t1">Preparar presentación</li>
+          <li class="tarea" data-id="t2">Buscar imágenes</li>
+          <li class="tarea" data-id="t3">Revisar documentación</li>
+          <li class="tarea" data-id="t4">Crear repositorio</li>
+        </ul>
+      </article>
+
+      <!-- Columna de tareas en proceso -->
+      <article class="columna">
+        <h2>En proceso
+          <span id="contador-proceso" class="contador">2</span>
+        </h2>
+        <ul id="proceso" class="lista-tareas" data-estado="En proceso">
+          <li class="tarea" data-id="t5">Diseñar la interfaz</li>
+          <li class="tarea" data-id="t6">Escribir el README</li>
+        </ul>
+      </article>
+
+      <!-- Columna de tareas completadas -->
+      <article class="columna">
+        <h2>Completadas
+          <span id="contador-completadas" class="contador">1</span>
+        </h2>
+        <ul id="completadas" class="lista-tareas" data-estado="Completadas">
+          <li class="tarea" data-id="t7">Elegir el proyecto</li>
+        </ul>
+      </article>
+    </section>
+
+    <p id="mensaje" class="mensaje" role="status" aria-live="polite">
+      Elige una tarea y arrástrala a otra posición.
+    </p>
+  </main>
+
+
+</body>
+
+</html>
