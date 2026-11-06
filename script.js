@@ -23,20 +23,20 @@ const opcionesComunes = {
     group: 'shared',
     animation: 150,
 
-    // ✅ Se dispara SOLO cuando un ítem ENTRA en esta lista desde otra
-    onAdd(event) {
+    // // Se dispara SOLO cuando un ítem ENTRA en esta lista desde otra
+    // onAdd(event) {
 
-    },
+    // },
 
-    // ✅ Se dispara SOLO cuando un ítem SALE de esta lista hacia otra
-    onRemove(event) {
+    // // Se dispara SOLO cuando un ítem SALE de esta lista hacia otra
+    // onRemove(event) {
 
-    },
+    // },
 
-    onSort() { },
+    // onSort() { },
 
 
-    // ✅ Se dispara SIEMPRE (reordenar dentro de la lista o mover a otra)
+    // Se dispara SIEMPRE (reordenar dentro de la lista o mover a otra)
     onEnd(event) {
         mensaje.textContent = `Tarea "${event.item.textContent}" movida. Columna en la que se encuentra "${event.to.dataset.estado}"`
         actualizarContadores()
